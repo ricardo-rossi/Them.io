@@ -23,3 +23,17 @@ Route::get('polls/{uuid}', 'PollsController@apiShow');
 Route::get('embed/{uuid}', 'PollsController@show');
 
 Route::post('embed/{uuid}', 'PollsController@post');
+
+Route::get('api/polls/{uuid}', function($uuid) {
+
+	$poll = Poll::where('_id', $uuid)
+		->select(['id','_id','title','subtitle'])->first();
+
+	if($poll)
+	{
+		$poll->options = $poll->options()->select(['_id','label'])->get();
+		unset($poll->id);
+	}
+
+	return $poll;
+});
