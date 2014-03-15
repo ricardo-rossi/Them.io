@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" id="ng-app" ng-app="app" ng-controller="MainCtrl" xmlns:ng="http://angularjs.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">  
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">  
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<!-- 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/united/bootstrap.min.css">
+ -->	<link rel="stylesheet" href="//getbootstrap.com/assets/css/docs.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css">
+	<link rel="stylesheet" href="/poll.css">
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+
+	<title>Poll Prototype</title>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="margin-top:30px;">
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+			<div class="panel panel-default">
+			  <div class="panel-body">
+
+			  	<div class="poll-title">
+				  	<input type="text" ng-model="poll.title">
+				  </div>
+			    <div class="poll-desc">
+				  	<input type="text" ng-model="poll.description" placeholder="Poll Description">
+			    </div>
+					
+					<div id="{{$index}}" draggable droppable drop="handleDrop" class="row poll-item poll-option" ng-repeat="option in poll.options">
+						<div id="row_{{$index}}" class="col-md-12 animated" ng-class="{flipInX: !$first}">
+							<div class="form-inline indent-10" ng-class="{draghandle: isTouch==false}"
+								>
+
+								<span ng-show="isTouch" ng-cloak class="updown-buttons">
+									<span ng-show="$first" style="margin-left:13px;"></span>
+									<span ng-show="$last" style="margin-left:13px;"></span>
+									<span ng-click="moveUp($index)" ng-hide="$first" class="glyphicon glyphicon-chevron-up poll-option-up">
+									</span>
+									<span ng-click="moveDown($index)" ng-hide="$last" class="glyphicon glyphicon-chevron-down poll-option-down">
+									</span>
+									<span ng-show="$first" style="margin-left:12px;"></span>
+									<span ng-show="$last" style="margin-left:12px;"></span>
+								</span>
+
+								</span>
+								<span class="poll-radio">
+									<input type="radio" disabled>
+								</span>
+								<span class="poll-option-text">
+									<input id="{{option.id}}" type="text" size="40" 
+									ng-model="option.text"> 
+								</span>
+									<span ng-click="removeOption(option)" ng-keypress="removeOption(option)" class="glyphicon glyphicon-remove poll-option-remove" ></span>
+								
+							</div>
+						</div>
+					</div>
+					<div ng-hide="isTouch" ng-cloak class="row poll-option">
+						<div class="col-md-12">
+							<div class="form-inline" style="padding-left:25px;">
+								<span class="poll-radio">
+									<input type="radio" disabled>
+								</span>
+								<span class="poll-add-option">
+									<input ng-model="new_option" ng-click="addOption(new_option)" 
+									data-ng-change="addOption(new_option)" type="text" size="40" placeholder="Click to add option">
+								</span>
+<!-- 								<span class="poll-option-other" tabindex="0">
+									or <a class="tt" data-toggle="tooltip" data-placement="top"title="add the Other field" ng-click="">Add Other</a>
+								</span>
+ -->							</div>
+						</div>
+					</div>
+					<div ng-show="isTouch" ng-cloak class="row poll-option">
+						<div class="col-md-12">
+							<div class="form-inline" style="padding-left:82px;">
+							<span class="poll-add-option">
+									<button ng-model="new_option" ng-click="addOption(new_option)" class="btn btn-sm btn-success">Add</button>
+								</span>
+	<!-- 							<span class="poll-option-other" tabindex="0">
+									or <a ng-click="">Add Other</a>
+								</span>
+	 -->						</div>
+						</div>					
+					</div>
+			  </div>
+			  <div class="panel-footer">
+			  	<button onclick="console.log('clicked');" class="btn btn-md btn-primary padded-sides-15">
+			  		Save
+			  	</button>
+			  </div>
+			</div>
+
+			<pre>{{ poll }}</pre>
+
+   	</div>
+  </div>
+</div><!-- /.container -->
+
+
+
+<!-- Dependencies (CDN) -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.11/fastclick.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-sanitize.js"></script>
+
+
+<!-- App Core -->
+<script src="/poll.js"></script>
+<script src="/dnd.js"></script>
+
+</body>
+</html>

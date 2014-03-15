@@ -20,7 +20,7 @@ class PollsController extends \BaseController {
 	}
 
 	public function show($uuid)
-	{
+	{		
 		$poll = Poll::whereUuid($uuid)->first(); 
 
 		return View::make('poll')

@@ -1,0 +1,200 @@
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+[ng-click], [data-ng-click], [x-ng-click] {
+    cursor: pointer;
+}
+
+.poll-option {
+  margin-top:5px;
+}
+
+.poll-option .draghandle {
+  margin-left:16px;
+  margin-right:4px;
+  cursor:move;
+  background-image: url('/img/drag_handle.gif');
+  background-repeat:no-repeat;
+  background-position-y:center;
+}
+
+.poll-option .draghandle > img {
+  margin-top:-4px;
+}
+
+.poll-option .poll-radio {
+  padding-right:4px;
+  padding-left:4px;
+}
+
+.poll-option .poll-radio-new {
+  padding-right:4px;
+}
+
+.poll-option .poll-radio > input {
+  cursor:initial;
+}
+
+.poll-option .poll-radio-new > input {
+  cursor:initial;
+  margin-top:10px;
+}
+
+.poll-desc {
+  padding-bottom:10px;
+}
+
+.poll-option-text {
+  padding-right:4px;
+}
+
+.poll-title {
+  padding:2px;
+}
+
+.poll-title > input {
+  border: 0px solid #fff;
+  border-radius:0px;
+  width:100%;
+  padding:6px;
+  padding-bottom:0px;  
+  font-size:18px;
+  font-weight:bold;
+}
+
+.poll-title:hover {
+  background-color: #ddd;
+}
+
+.poll-title > input:hover {
+  border: 0px solid #ccc;
+}
+
+.poll-desc {
+  padding:2px;
+}
+
+.poll-desc > input {
+  border: 0px solid #fff;
+  border-radius:0px;
+  width:100%;
+  padding:6px;  
+  font-size:13px;
+}
+
+.poll-desc:hover {
+  background-color: #ddd;
+}
+
+.poll-desc > input:hover {
+  border: 0px solid #ccc;
+}
+
+.poll-option-text > input {
+  border: 1px solid #dddddd;
+  border-radius:0px;
+  width:250px;
+  padding:6px; 
+  font-size:13px; 
+}
+
+.poll-option-remove {
+  color:#F4ADAB;
+  font-size:11px;
+}
+
+.updown-buttons {
+  color:lightgray;
+  font-size:11px;
+}
+
+.poll-option-up {
+  margin-left:5px;
+  margin-right:5px;
+}
+
+.poll-option-down {
+  margin-left:5px;
+  margin-right:5px;
+}
+
+.poll-option-add {
+/*  padding-left:29px;
+*/}
+
+.poll-option-other {
+  margin-left:5px;
+  color:lightgray;
+  font-size:12px; 
+}
+
+.poll-add-option {
+  padding-right:4px;
+  padding:1px;
+  color:lightgray;border:0;
+}
+
+.poll-add-option > input {
+  border: 1px solid #dddddd;
+  border-radius:0px;
+  width:250px;
+  padding:6px; 
+  font-size:13px; 
+}
+
+
+.indent-30 {
+  padding-left:30px;
+}
+
+.indent-20 {
+  padding-left:20px;
+}
+
+.indent-10 {
+  padding-left:10px;
+}
+
+.padded-sides-15 {
+  padding-left:15px;
+  padding-right:15px;
+}
+
+/***
+* DRAG % DROP CLASSES
+***/
+
+%content {
+  font-size: 32px;
+  text-align: center;
+  margin: 0 5px;
+}
+.bin {
+  @extend %content;
+  min-height: 150px;
+  min-width: 150px;
+  float: left;
+  border: 1px solid red;
+  padding: 20px;
+}
+.item {
+  @extend %content;
+  min-height: 150px;
+  min-width: 150px;
+  background: blue;
+  float: right;
+  transition: all 0.2s ease;
+}
+.drag {
+  opacity: 0.75;
+  background: #eee;
+  cursor:move;
+}
+.over {
+  border-top: #428bca;
+  border-width: 3px;
+  border-top-style: solid;
+}
+
