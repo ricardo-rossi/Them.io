@@ -1,7 +1,7 @@
   <div class="row">
     <div class="col-md-12">
 
-			<div class="panel panel-default">
+			<div class="_panel panel-default">
 			  <div class="panel-body">
 
 			  	<div class="poll-title">
@@ -69,14 +69,13 @@
 						</div>					
 					</div>
 			  </div>
-			  <div class="panel-footer">
+			  <div class="_panel-footer" style="padding-top:10px;padding-left:20px;">
 			  	<button onclick="console.log('clicked');" class="btn btn-md btn-primary padded-sides-15">
-			  		Save
+			  		Save and Continue
 			  	</button>
 			  </div>
 			</div>
 
-			<pre>@{{ poll }}</pre>
 
    	</div>
   </div>

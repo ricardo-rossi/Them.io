@@ -33,8 +33,8 @@ function MainCtrl($scope, $timeout) {
 	$scope.poll = 
     {
       "id": "poll_" + $scope.getID(),
-      "title": "Untitled Poll",
-      "description": "",
+      "title": "Click to edit poll's title",
+      "description": "Please choose an option below:",
       "options": [
       	{"id": "optn_" + $scope.getID(), "text": "Option 1"},
       ]

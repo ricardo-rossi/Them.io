@@ -34,18 +34,27 @@
             <form role="form">
               <ul class="nav nav-tabs">
               <li class="active"><a href="#polls" data-toggle="tab">POLLS</a></li>
-              <li><a href="#profile" data-toggle="tab">QUIZZES</a></li>
-              <li><a href="#profile" data-toggle="tab">RATINGS</a></li>
-              <li><a href="#messages" data-toggle="tab">VOTES</a></li>
-              <li><a href="#messages" data-toggle="tab">SHARES</a></li>
+              <li><a href="#quizzes" data-toggle="tab">QUIZZES</a></li>
+              <li><a href="#ratings" data-toggle="tab">RATINGS</a></li>
+              <li><a href="#votes" data-toggle="tab">VOTES</a></li>
+              <li><a href="#shares" data-toggle="tab">SHARES</a></li>
               </ul>
               <div class="tab-content">
                 <div class="tab-pane active" id="polls">
                   @include('editors.poll')
                 </div>
-                <div class="tab-pane" id="profile">Profile tab content</div>
-                <div class="tab-pane" id="messages">Message tab content</div>
-                <div class="tab-pane" id="settings">Settings tab content</div>
+                <div class="tab-pane" id="quizzes">
+                  @include('editors.quiz')
+                </div>
+                <div class="tab-pane" id="ratings">
+                 @include('editors.rating')
+                </div>
+                <div class="tab-pane" id="votes">
+                 @include('editors.vote')
+                </div>
+                <div class="tab-pane" id="shares">
+                 @include('editors.share')
+                </div>
               </div>
            </form>
           </div>

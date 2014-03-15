@@ -2,6 +2,7 @@
 
 @section('head')
 	<link rel="stylesheet" href="/poll.css">
+	<link rel="stylesheet" href="/css/editors.css">
 @stop
 
 @section('title')

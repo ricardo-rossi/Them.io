@@ -55,13 +55,14 @@
 }
 
 .poll-title > input {
+  font-family: 'Oswald';
   border: 0px solid #fff;
   border-radius:0px;
   width:100%;
   padding:6px;
   padding-bottom:0px;  
   font-size:18px;
-  font-weight:bold;
+  font-weight:normal;
 }
 
 .poll-title:hover {
