@@ -5,6 +5,32 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 use Laravel\Cashier\BillableTrait;
 use Laravel\Cashier\BillableInterface;
 
+/**
+ * An Eloquent Model: 'User'
+ *
+ * @property integer $id
+ * @property string $username
+ * @property string $email
+ * @property string $password
+ * @property string $firstname
+ * @property string $lastname
+ * @property string $telephone
+ * @property string $company
+ * @property string $org_type
+ * @property string $city
+ * @property string $country
+ * @property string $state
+ * @property string $source
+ * @property boolean $admin
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property boolean $stripe_active
+ * @property string $stripe_id
+ * @property string $stripe_plan
+ * @property string $last_four
+ * @property \Carbon\Carbon $trial_ends_at
+ * @property \Carbon\Carbon $subscription_ends_at
+ */
 class User extends Eloquent implements UserInterface, RemindableInterface, BillableInterface {
 
 	use BillableTrait;

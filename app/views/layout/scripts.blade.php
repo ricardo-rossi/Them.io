@@ -10,4 +10,5 @@
     
     <script src="js/scrolltopcontrol.js"></script>
     <script src="//cdn.jsdelivr.net/jquery.sticky/1.0.0/jquery.sticky.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.0.7/jquery.placeholder.min.js"></script>
     <script src="js/custom.js"></script>

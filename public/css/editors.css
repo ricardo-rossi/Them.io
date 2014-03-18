@@ -23,5 +23,5 @@
 
 .rating span.star:hover:before,.rating span.star:hover~span.star:before {
 	content:"\f005";
-	color:#e3cf7a
+	color:#d9534f;
 }

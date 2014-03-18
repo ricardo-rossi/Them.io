@@ -108,7 +108,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Laravel\Cashier\CashierServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Clockwork\Support\Laravel\ClockworkServiceProvider'
+		'Clockwork\Support\Laravel\ClockworkServiceProvider',
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	),
 

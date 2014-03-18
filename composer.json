@@ -5,11 +5,13 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*@dev",
-		"laravel/cashier": "~1.0"
+		"laravel/cashier": "~1.0",
+		"laravelbook/ardent": "dev-master"	
 	},
 	"require-dev": {
 	    "way/generators": "2.*",
-	    "itsgoingd/clockwork": "1.*"
+	    "itsgoingd/clockwork": "1.*",
+	    "barryvdh/laravel-ide-helper": "1.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -28,6 +30,7 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
+			"php artisan ide-helper:generate",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [

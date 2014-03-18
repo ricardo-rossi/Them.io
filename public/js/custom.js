@@ -173,9 +173,16 @@ $(document).ready(function(){
 	$('a[href*=#buttons],a[href*=#panels],a[href*=#navbar], a[href*=#info-boards], a[href*=#navs], a[href*=#headlines]').bind("click", function(e){
 	  var anchor = $(this);
 	  $('html, body').stop().animate({
-		scrollTop: $(anchor.attr('href')).offset().top
+		scrollTop: $(anchor.attr('href')).offset().top - $('#navbar').height()
 	  }, 1000);
 	  e.preventDefault();
 	});
    return false;
 });
+
+$('input, textarea').placeholder();
+
+// prettyprint
+$('pre').addClass('prettyprint');
+
+
