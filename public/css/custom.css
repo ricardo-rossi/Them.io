@@ -1781,7 +1781,7 @@ pre .dec,
 pre .var { color:#660066; }
 pre .fun { color:#ff0000; }
 
-/*
+
 pre.prettyprint
 {
     background: #3F3F49;
@@ -1796,6 +1796,7 @@ pre.prettyprint
 	font-family: monospace;
 }
 
+/*
 pre.prettyprint span
 {
 	font-size: 13px!important;

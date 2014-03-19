@@ -170,7 +170,7 @@ $(function(){
 // Smooth scrolling for UI elements page
 // =====================================
 $(document).ready(function(){
-	$('a[href*=#buttons],a[href*=#panels],a[href*=#navbar], a[href*=#info-boards], a[href*=#navs], a[href*=#headlines]').bind("click", function(e){
+	$('.scrollto,a[href*=#buttons],a[href*=#panels],a[href*=#navbar], a[href*=#info-boards], a[href*=#video], a[href*=#headlines]').bind("click", function(e){
 	  var anchor = $(this);
 	  $('html, body').stop().animate({
 		scrollTop: $(anchor.attr('href')).offset().top - $('#navbar').height()

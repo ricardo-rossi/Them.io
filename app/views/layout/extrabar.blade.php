@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="pull-right">
-          <a href="#navbar" class="btn btn-success btn-lg learn-more animated slideInRight">Learn More</a>
+          <a href="#video" class="btn btn-success btn-lg learn-more animated slideInRight">Learn More</a>
         </div>        
       </div>
       <div class="row">
@@ -25,7 +25,7 @@
           <div class="sign-form animated bounceInLeft extra-main">
             <div class="ribbon-wrapper">
                 <div class="ribbon success">
-                    FREE
+                    BETA
                 </div>
             </div>
             <h3 class="first-child text-left">Get Started In Seconds. For Free!</h3>

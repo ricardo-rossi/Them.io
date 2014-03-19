@@ -17,8 +17,7 @@ data-spy="scroll" data-target="#navigation" data-offset="100"
       <div class="col-md-3">
         <div id="navigation">
         <ul class="nav nav-pills nav-stacked bs-sidebar affix-top" data-spy="affix" data-offset-top="0" data-offset-bottom="0">
-          <li class="active"><a href="#start" data-toggle="tab">Getting Started</a></li>
-          <li><a href="#buttons" data-toggle="tab">Buttons</a></li>
+          <li class="active"><a href="#buttons" data-toggle="tab">Getting Started</a></li>
           <li><a href="#panels" data-toggle="tab">Panels</a></li>
           <li><a href="#info-boards" data-toggle="tab">Info boards</a></li>
           <li><a href="#navs" data-toggle="tab">Navs</a></li>
@@ -29,17 +28,11 @@ data-spy="scroll" data-target="#navigation" data-offset="100"
 
       <div class="col-md-9">
         
-        <div id="start">
-        <h2 class="headline first-child text-color">
+        <!-- Buttons -->
+        <h2 class="headline first-child text-color" id="buttons">
           <span class="border-color">Getting Started</span>
         </h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, quam, repellendus, fugit, laudantium ratione ipsam at aperiam aliquid accusantium dicta numquam natus eveniet culpa tempora veritatis. Enim, reprehenderit necessitatibus voluptatibus distinctio nam quaerat qui ut veniam amet dolores minus ipsam nisi eveniet porro iusto voluptatum ea eligendi sequi nobis provident!</p>
-        </div>
-
-        <!-- Buttons -->
-        <h2 class="headline first-child text-color" id="buttons">
-          <span class="border-color">Buttons</span>
-        </h2>
         <h3 class="primary-font">Classes</h3>
         <p>The Mosaic theme offers you new button classes that can be used along with the default Bootstrap 3 buttons:</p>
         <div class="panel panel-default">
@@ -58,18 +51,12 @@ data-spy="scroll" data-target="#navigation" data-offset="100"
           </div>
         </div>
 
-<pre><code>// Smooth scrolling for UI elements page
-// =====================================
-$(document).ready(function(){
-  $('a[href*=#buttons]').bind("click", function(e){
-    var anchor = $(this);
-    $('html, body').stop().animate({
-    scrollTop: $(anchor.attr('href')).offset().top - $('#navbar').height()
-    }, 1000);
-    e.preventDefault();
-  });
-   return false;
+<pre><code>/* ===== Sticky Navbar ===== */
+
+$(window).load(function(){
+  $(".navbar").sticky({ topSpacing: 0 });
 });
+
 </code></pre>        
 
         <h3 class="primary-font">Sizes</h3>
@@ -108,6 +95,12 @@ $(document).ready(function(){
         </h2>
         <p>
           While not always necessary, sometimes you need to put your DOM in a box. For those situations, try the panel component.
+
+<pre><code>window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
+</code></pre>        
+
           <br />
           In the Mosaic template we have added several new classes to the panel element. For full documentation on panels, please refer to the official <a href="http://getbootstrap.com/components/#panels">Bootstrap page</a>.
         <div class="panel panel-default">

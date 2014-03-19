@@ -5,7 +5,7 @@
     @yield('head')
   </head>
 
-  <body class="body-blue">
+  <body class="body-blue animated fadeIn">
     
     @yield('content')
 

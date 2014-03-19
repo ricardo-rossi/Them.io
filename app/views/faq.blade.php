@@ -6,23 +6,6 @@
 
 @section('content')
 
-<!-- Topic Header -->
-<!-- <div class="topic">
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3 class="primary-font">F.A.Q.</h3>
-    </div>
-    <div class="col-sm-8">
-      <ol class="breadcrumb pull-right hidden-xs">
-        <li><a href="/">Home</a></li>
-        <li class="active">F.A.Q.</li>
-      </ol>
-    </div>
-  </div>
-</div>
-</div> -->
-
 <div class="container">
   <div class="row">
 
@@ -33,7 +16,7 @@
     </h2>
 
     <ul class="help-questions-p">
-      <li><a href="#1">Proin pharetra ipsum vel turpis semper dapibus?</a></li>
+      <li><a href="#first" class="scrollto">Proin pharetra ipsum vel turpis semper dapibus?</a></li>
       <li><a href="help-answer.html">Vivamus sed magna vulputate, vehicula diam nec, tincidunt purus?</a></li>
       <li><a href="help-answer.html">Nullam eu turpis in turpis accumsan interdum sit amet vel tortor?</a></li>
       <li><a href="help-answer.html">Suspendisse posuere dolor in lobortis rhoncus?</a></li>
@@ -51,9 +34,12 @@
     </ul>
 
     <hr/>
-    <div class="clearfix"></div>
+    <div id="first" class="clearfix"></div>
 
-    <h4 id="1" class="primary-font">Do you provide support for this item?</h4>
+    <h4 class="primary-font">
+      Do you provide support for this item?
+    </h4>
+    
     <hr>
     <p>
       Yes, do not hesitate to contact us if you have any questions or requests regarding this item. 

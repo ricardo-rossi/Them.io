@@ -43,6 +43,7 @@
               <img src="//www.gravatar.com/avatar/6cba523020d38ee3275849615ead69e2" 
               class="nav-gravatar" alt="rrossi">&nbsp;&nbsp;{{ Auth::user()->username }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
+                <li><a href="/" class="bg-hover-color">Home</a></li>
                 <li><a href="/settings" class="bg-hover-color">Settings</a></li>
                 <li><a href="/logout" class="bg-hover-color">Log Out</a></li>
               </ul>
@@ -51,7 +52,7 @@
           </ul>
           <div class="ribbon-wrapper">
               <div class="ribbon success">
-                  FREE
+                  BETA
               </div>
           </div>
 

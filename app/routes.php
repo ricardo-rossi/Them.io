@@ -5,18 +5,27 @@
 //$tld = substr(Request::root(), strrpos(Request::root(), ".")+1);
 
 // ***********************
+// PRIVATE ROUTES
+// ***********************
+
+Route::group(array('before' => array('auth')), function() 
+{
+	Route::get('/', array('as' => 'userhome', 'uses' => 'UserHomeController@getHome'));
+});
+
+
+// ***********************
 // * PUBLIC ROUTES
 // ***********************
 
-Route::get('/', function()
+if(Auth::guest())
 {
-	if(Auth::check()) 
-	{
-		return Redirect::route('userhome');
-	} 
-	
-	return View::make('home');	
-});
+	Route::get('/', function()
+	{	
+		return View::make('home');	
+	});	
+}
+
 
 Route::get('/features', function() { return View::make('features');	});
 
@@ -40,21 +49,11 @@ Route::get('/signup',
 Route::get('/login', 
 	array('as' => 'login', 'uses' => 'UsersController@getLogin'));
 
-// Route::post('/login', 'UsersController@postSignin');
+Route::post('/login', 'UsersController@postLogin');
 
 Route::get('/logout', 
 	array('as' => 'logout', 'uses' => 'UsersController@getLogout'));
 
-
-// ***********************
-// PRIVATE ROUTES
-// ***********************
-
-Route::group(array('prefix' => 'home', 'before' => array('auth')), function() 
-{
-	Route::get('/', array('as' => 'userhome', 'uses' => 'UserHomeController@getHome'));
-
-});
 
 // ***********************
 // * API ROUTES

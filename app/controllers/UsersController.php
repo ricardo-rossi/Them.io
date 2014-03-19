@@ -78,26 +78,22 @@ class UsersController extends BaseController {
 		//->with('backto', Input::get('r'));
 	}
 
-	// public function postSignin() 
-	// {
-	// 	// redirect the user back to the intended page or defaultpage if there isn't one
-	// 	if (Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))) 
-	// 	{
-	// 		$l = new Login();
-	// 		$l->user_id = Auth::user()->id;
-	// 		$l->save();
+	public function postLogin() 
+	{
+		// redirect the user back to the intended page or defaultpage if there isn't one
+		if (Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))) 
+		{
+			$backto = '/';
+			if(Input::has('backto')) 
+			{
+				$backto = Input::get('backto');
+			}
 
-	// 		$backto = '/account';
-	// 		if(Input::has('backto')) 
-	// 		{
-	// 			$backto = Input::get('backto');
-	// 		}
+			return Redirect::intended($backto)->with('message', 'Thanks for signing in');
+		}
 
-	// 		return Redirect::intended($backto)->with('message', 'Thanks for signing in');
-	// 	}
-
-	// 	return Redirect::route('login')->with('message', 'Your email/password combo was incorrect');
-	// }
+		return Redirect::route('login')->with('message', 'Your email/password combo was incorrect');
+	}
 
 	public function getLogout() 
 	{
